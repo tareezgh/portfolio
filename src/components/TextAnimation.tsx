@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Title } from "../styles/home";
+import { IntroTitle } from "../styles/home";
 
 interface TextAnimationProps {
   texts: string[];
@@ -42,7 +42,7 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ texts }) => {
 
 export default TextAnimation;
 
-const AnimatedTitle = styled(Title)`
+const AnimatedTitle = styled(IntroTitle)`
   overflow: hidden;
   border-right: 2px solid #333;
   white-space: nowrap;

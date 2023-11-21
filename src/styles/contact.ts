@@ -1,19 +1,5 @@
 import styled from "styled-components";
-
-const PrimaryColor = "#f7c343";
-
-export const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 40px auto;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    width: 90%;
-    margin: auto;
-  }
-`;
+import { PrimaryColor } from "./style";
 
 export const InnerContainer = styled.div`
   display: flex;
@@ -60,36 +46,58 @@ export const Form = styled.form`
   }
 `;
 
-export const Input = styled.input`
-  padding: 10px;
-  margin-bottom: 20px;
+const inputStyles = `
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+  margin: 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 0.8rem;
   width: 100%;
+  max-width: 40rem;
   box-sizing: border-box;
+  font-family: Inter;
+
+  &:focus {
+    outline: none;
+    border-color: ${PrimaryColor};
+  }
+
+  &:hover {
+    outline: none;
+    border-color: ${PrimaryColor};
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
+export const Input = styled.input`
+  ${inputStyles}
 `;
 
 export const TextArea = styled.textarea`
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  ${inputStyles}
+  padding: 0.5rem 1rem; 
   resize: vertical;
-  width: 100%;
-  box-sizing: border-box;
 `;
 
 export const SubmitButton = styled.button`
-  padding: 10px;
+  padding: 0.75rem 3.5rem;
+  margin: 0.5rem;
   background-color: ${PrimaryColor};
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 1rem;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.5rem;
   width: 100%;
 
   &:hover {
     background-color: darken(${PrimaryColor}, 10%);
+  }
+  @media (max-width: 768px) {
+    font-size: 1rem;
   }
 `;

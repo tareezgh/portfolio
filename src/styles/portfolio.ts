@@ -1,13 +1,10 @@
 import styled from "styled-components";
-
-export const PortfolioContainer = styled.div`
-  text-align: center;
-  padding: 40px;
-`;
+import { PrimaryColor } from "./style";
 
 export const ProjectList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 `;
 
@@ -33,10 +30,9 @@ export const CardContainer = styled.a`
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: 200px;
+  height: 12rem;
   border-radius: 6px;
-  object-fit: contain;
+  object-fit: cover;
   border-bottom: 1px solid #eaeaea;
 `;
 
@@ -50,7 +46,7 @@ export const Title = styled.h3`
   text-align: center;
 
   &:hover {
-    color: #f7c343;
+    color: ${PrimaryColor};
   }
 
   @media (max-width: 768px) {

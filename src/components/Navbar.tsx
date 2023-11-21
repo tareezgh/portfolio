@@ -8,17 +8,30 @@ import {
   NavItemsFrame,
   NavItem,
 } from "../styles/navbar";
+import { NavbarButton } from "../styles/buttons";
 
 function Navbar() {
-  const filters = ["About", "Portfolio", "Contact"];
+  const filters = ["Home", "About", "Portfolio"];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [activeFilter, setActiveFilter] = useState("");
   const sectionsContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (sectionClassName: string) => {
     const section = document.querySelector(`.${sectionClassName}`);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+
+      const offsetValue = section.getBoundingClientRect().top - 100;
+
+      window.scrollBy({
+        top: offsetValue,
+        behavior: "smooth",
+      });
+
       setIsMenuOpen(false);
     }
   };
@@ -30,13 +43,23 @@ function Navbar() {
         <MobileMenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <img src={hamburgerIcon} alt={"Menu"} />
         </MobileMenuIcon>
-        <NavItemsFrame isOpen={isMenuOpen} ref={sectionsContainerRef}>
+        <NavItemsFrame open={isMenuOpen} ref={sectionsContainerRef}>
           {filters.map((filter) => (
-            <NavItem key={filter} onClick={() => scrollToSection(filter)}>
+            <NavItem
+              key={filter}
+              active={filter === activeFilter ? true : false}
+              onClick={() => {
+                scrollToSection(filter);
+                setActiveFilter(filter);
+              }}
+            >
               {filter}
             </NavItem>
           ))}
         </NavItemsFrame>
+        <NavbarButton onClick={() => scrollToSection("Contact")}>
+          Contact
+        </NavbarButton>
       </NavbarContainer>
     </>
   );

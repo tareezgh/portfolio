@@ -1,14 +1,20 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useRef } from "react";
 import {
-  FormContainer,
   Form,
   Input,
   TextArea,
   SubmitButton,
   InnerContainer,
-  InfoCard,
 } from "../styles/contact";
-import { Header } from "../styles/general";
+import {
+  SectionContainer,
+  SectionDescription,
+  SectionTitle,
+} from "../styles/style";
+
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+emailjs.init("KnvuHmCPhQg0PD8G7");
 
 interface FormData {
   name: string;
@@ -17,6 +23,7 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -35,19 +42,52 @@ const ContactForm: React.FC = () => {
 
   const handleContactSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+
+    const { name, email, message } = formData;
+    const emailParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+
+    if (!name || !email || !message) {
+      toast.error("Please fill in all fields", {
+        position: "top-center",
+        hideProgressBar: true,
+      });
+    } else {
+      emailjs
+        .send(
+          "service_vtnb7to",
+          "template_rxb0tm4",
+          emailParams,
+          "KnvuHmCPhQg0PD8G7"
+        )
+        .then(() => {
+          toast.success("Email sent successfully", {
+            position: "top-center",
+            hideProgressBar: true,
+          });
+        })
+        .catch((error: any) => {
+          toast.error("Error sending email, try again", {
+            position: "top-center",
+            hideProgressBar: true,
+          });
+        });
+    }
   };
 
   return (
-    <FormContainer className="Contact">
-      <Header>Interested to work together? Let's talk</Header>
+    <SectionContainer className="Contact">
+      <SectionTitle>Let's Collaborate</SectionTitle>
+      <SectionDescription>
+        Are you interested in leveraging my expertise for your project? I am
+        eager to explore innovative opportunities and contribute to the success
+        of your team.
+      </SectionDescription>
       <InnerContainer>
-        <InfoCard>
-          <p>Tareez Ghandour</p>
-          <p>052-4837648</p>
-          <p>tareezghandour15@gmail.com</p>
-        </InfoCard>
-        <Form onSubmit={handleContactSubmit}>
+        <Form ref={form} onSubmit={handleContactSubmit}>
           <Input
             type="text"
             name="name"
@@ -58,13 +98,13 @@ const ContactForm: React.FC = () => {
           <Input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Your Email"
             value={formData.email}
             onChange={handleInputChange}
           />
           <TextArea
             name="message"
-            placeholder="Message"
+            placeholder="Your Message"
             value={formData.message}
             onChange={handleInputChange}
             rows={4}
@@ -72,7 +112,7 @@ const ContactForm: React.FC = () => {
           <SubmitButton type="submit">Send</SubmitButton>
         </Form>
       </InnerContainer>
-    </FormContainer>
+    </SectionContainer>
   );
 };
 

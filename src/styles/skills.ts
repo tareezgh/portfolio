@@ -1,15 +1,5 @@
 import styled, { keyframes } from "styled-components";
-
-export const SkillsContainer = styled.div`
-  display: flex;
-  overflow: hidden;
-  user-select: none;
-  margin: 24px 32px;
-
-  @media (max-width: 768px) {
-    margin: 24px 0;
-  }
-`;
+import { PrimaryColor } from "./style";
 
 const scrollX = keyframes`
   from {
@@ -18,6 +8,46 @@ const scrollX = keyframes`
   to {
     transform: translateX(-100%);
   }
+`;
+
+export const SkillBars = styled.div`
+  margin: 1.5rem;
+  width: 100vw;
+  max-width: 80%;
+  text-align: center;
+`;
+export const SkillBar = styled.div`
+  display: flex;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  border-radius: 0.5rem;
+
+  background: ${PrimaryColor};
+`;
+// not used
+export const SkillBarImg = styled.img`
+  object-fit: cover;
+  height: 3rem;
+  width: 3rem;
+  margin-right: 2rem;
+`;
+export const SkillBarText = styled.div`
+  font-size: 1rem;
+  font-family: Inter;
+  font-weight: 500;
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #474658;
+  }
+`;
+
+export const SkillsIcons = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export const SkillsListGroup = styled.div`

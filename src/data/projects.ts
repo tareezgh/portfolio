@@ -34,11 +34,4 @@ export const PROJECTS: Project[] = [
     webUrl: "https://itravel-1.web.app/",
     codeUrl: "",
   },
-  // {
-  //   id: 4,
-  //   title: "Stock App",
-  //   imageUrl: Epicure,
-  //   webUrl: "https://mystocks-app.web.app/sign-in",
-  //   codeUrl: "",
-  // },
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import { Project } from "../types/interface";
+import { Project } from "../data/projects";
 import { CardContainer, Content, Image, Title } from "../styles/portfolio";
 
 interface ProjectCardProps {

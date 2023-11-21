@@ -1,15 +1,21 @@
 import styled from "styled-components";
+import { PrimaryColor } from "./style";
 
-export const HeroContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+export const IntroContainer = styled.div`
+  width: 100vw;
+  height: 60vh;
+  max-width: 85%;
+  margin: 0 auto;
+  position: relative;
   align-items: flex-start;
   gap: 50px;
-  margin-left: 10%;
   margin-top: 50px;
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `;
 
-export const HeroContent = styled.div`
+export const IntroContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -20,31 +26,41 @@ export const HeroContent = styled.div`
   }
 `;
 
-export const HeroImage = styled.div`
+export const IntroImage = styled.div`
   border-radius: 1rem;
-
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
   object-fit: contain;
   overflow: hidden;
   img {
-    width: 600px;
-    height: 550px;
+    width: 550px;
+    height: 70vh;
   }
 
   @media (max-width: 768px) {
     display: none;
+    // opacity: 0.1;
+    // top: -3rem;
+    // right: -5rem;
+    // img {
+    //   width: 100vw;
+    //   height: 75vh;
+    // }
   }
 `;
 
 export const WelcomeTitle = styled.div`
-  color: #f7c343;
+  color: ${PrimaryColor};
   font-family: Inter;
-  font-size: 32px;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 
   @media (max-width: 768px) {
-    font-size: 24px;
+    font-size: 2rem;
   }
 `;
 
@@ -52,55 +68,44 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
-`;
-
-export const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   gap: 10px;
-
-  @media (max-width: 768px) {
-    gap: 5px;
-  }
 `;
 
-export const Title = styled.div`
+export const IntroTitle = styled.div`
   display: flex;
   flex-direction: row;
   color: #232020;
   font-family: Inter;
-  font-size: 48px;
+  font-size: 3rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 2.5rem;
     flex-direction: column;
   }
 `;
 
-export const Name = styled.div`
-  color: #f7c343;
+export const IntroName = styled.span`
+  color: ${PrimaryColor};
   margin-left: 10px;
   @media (max-width: 768px) {
     margin-left: 0;
   }
 `;
 
-export const Description = styled.div`
-  width: 550px;
+export const IntroPara = styled.div`
+  width: 500px;
   color: #474658;
   font-family: Inter;
-  font-size: 18px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   @media (max-width: 768px) {
-    font-size: 14px;
-    width: auto;
+    font-size: 1rem;
+    width: 85%;
     margin-right: 30px;
   }
 `;
@@ -118,9 +123,4 @@ export const ButtonContainer = styled.div`
 export const SocialContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
-
-  @media (max-width: 768px) {
-    margin-top: 10px;
-  }
 `;
