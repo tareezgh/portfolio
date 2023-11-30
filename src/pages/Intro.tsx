@@ -13,16 +13,15 @@ import {
 import IntroLogo from "../assets/hero-image.png";
 import TextAnimation from "../components/TextAnimation";
 
-import { handleDownload } from "../utils/helpers";
+import { handleDownload, scrollToSection } from "../utils/helpers";
 import Socials from "../components/Socials";
 
 const Intro = () => {
-  const texts: string[] = ["Software Engineer.", "Full Stack Developer."];
-
-  const scrollToSection = (sectionClassName: string) => {
-    const section = document.querySelector(`.${sectionClassName}`);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
-  };
+  const texts: string[] = [
+    "Software Engineer.",
+    "Full Stack Developer.",
+    "Freelancer.",
+  ];
 
   return (
     <IntroContainer className="Home">
@@ -49,7 +48,7 @@ const Intro = () => {
         <Socials />
       </IntroContent>
       <IntroImage>
-        <img src={IntroLogo} alt="Intro" />
+        <img src={IntroLogo} alt="HeroImage" />
       </IntroImage>
     </IntroContainer>
   );

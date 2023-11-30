@@ -13,3 +13,21 @@ export const handleDownload = () => {
 
   document.body.removeChild(link);
 };
+
+export const scrollToSection = (sectionClassName: string) => {
+  const section = document.querySelector(`.${sectionClassName}`);
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+
+    const offsetValue = section.getBoundingClientRect().top - 100;
+
+    window.scrollBy({
+      top: offsetValue,
+      behavior: "smooth",
+    });
+  }
+};
