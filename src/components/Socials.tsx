@@ -1,11 +1,11 @@
 import { SocialContainer } from "../styles/home";
 import SocialIcon from "./SocialIcon";
 
-import LinkedInIcon from "../assets/linkedin.png";
-import GitHubIcon from "../assets/github.png";
-import FacebookIcon from "../assets/facebook.png";
-import InstagramIcon from "../assets/instagram.png";
-import GmailIcon from "../assets/gmail.png";
+import LinkedInIcon from "../assets/linkedin.svg";
+import GitHubIcon from "../assets/github.svg";
+import FacebookIcon from "../assets/facebook.svg";
+import InstagramIcon from "../assets/instagram.svg";
+import GmailIcon from "../assets/google.svg";
 
 const Socials = () => {
   const socialMediaLinks = {
@@ -19,8 +19,8 @@ const Socials = () => {
   return (
     <>
       <SocialContainer>
-        <SocialIcon href={github} imageSrc={GitHubIcon} alt="GitHub" />
         <SocialIcon href={linkedin} imageSrc={LinkedInIcon} alt="LinkedIn" />
+        <SocialIcon href={github} imageSrc={GitHubIcon} alt="GitHub" />
         <SocialIcon href={gmail} imageSrc={GmailIcon} alt="Gmail" />
         <SocialIcon href={facebook} imageSrc={FacebookIcon} alt="Facebook" />
         <SocialIcon href={instagram} imageSrc={InstagramIcon} alt="Instagram" />

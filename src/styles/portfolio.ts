@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PrimaryColor } from "./style";
+import { FlexRow, LightGreyColor, PrimaryColor } from "./style";
 
 export const ProjectList = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const ProjectList = styled.div`
 `;
 
 export const CardContainer = styled.a`
-  border: 1px solid #eaeaea;
+  border: 1px solid ${LightGreyColor};
   border-radius: 10px;
   overflow: hidden;
   margin: 16px;
@@ -23,9 +23,9 @@ export const CardContainer = styled.a`
   }
 
   @media (max-width: 768px) {
-    width: calc(50% - 32px);
-    width: 100%;
+    width: auto;
     margin: 8px;
+    padding: 10px;
   }
 `;
 
@@ -33,11 +33,23 @@ export const Image = styled.img`
   height: 12rem;
   border-radius: 6px;
   object-fit: cover;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid ${LightGreyColor};
+
+  @media (max-width: 768px) {
+    height: 10rem;
+  }
+`;
+
+export const Icons = styled.div`
+  ${FlexRow}
+  gap: 8px;
 `;
 
 export const Content = styled.div`
-  padding: 10px;
+  ${FlexRow}
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
 `;
 
 export const Title = styled.h3`

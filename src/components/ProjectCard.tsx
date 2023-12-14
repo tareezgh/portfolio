@@ -1,7 +1,15 @@
 import React from "react";
 import { Project } from "../data/projects";
-import { CardContainer, Content, Image, Title } from "../styles/portfolio";
-
+import {
+  CardContainer,
+  Content,
+  Icons,
+  Image,
+  Title,
+} from "../styles/portfolio";
+import SocialIcon from "./SocialIcon";
+import codeIcon from "../assets/code.png";
+import linkIcon from "../assets/link.png";
 interface ProjectCardProps {
   project: Project;
 }
@@ -13,10 +21,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     }
   };
   return (
-    <CardContainer onClick={handleCardClick}>
-      <Image src={project.imageUrl} alt={project.title} />
+    <CardContainer>
+      <Image
+        src={project.imageUrl}
+        alt={project.title}
+        onClick={handleCardClick}
+      />
       <Content>
-        <Title>{project.title}</Title>
+        <Title onClick={handleCardClick}>{project.title}</Title>
+        <Icons>
+          <SocialIcon href={project.webUrl} imageSrc={linkIcon} alt="Website" />
+          {project.codeUrl ? (
+            <SocialIcon
+              href={project.codeUrl}
+              imageSrc={codeIcon}
+              alt="Code-GitHub"
+            />
+          ) : (
+            ""
+          )}
+        </Icons>
       </Content>
     </CardContainer>
   );

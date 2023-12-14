@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { IntroTitle } from "../styles/home";
+import { MidBlackColor } from "../styles/style";
 
 interface TextAnimationProps {
   texts: string[];
@@ -16,11 +17,11 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ texts }) => {
     let isDeleting = false;
 
     const interval = setInterval(() => {
-      currentText = texts[textIndex].slice(0, currentIndex);
+      currentText = texts[textIndex].slice(0, currentIndex + 1);
 
       isDeleting ? currentIndex-- : currentIndex++;
 
-      if (currentIndex === texts[textIndex].length + 1) {
+      if (currentIndex === texts[textIndex].length) {
         isDeleting = true;
       }
 
@@ -43,7 +44,8 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ texts }) => {
 export default TextAnimation;
 
 const AnimatedTitle = styled(IntroTitle)`
+  display: inline-block;
   overflow: hidden;
-  border-right: 2px solid #333;
+  border-right: 2px solid ${MidBlackColor};
   white-space: nowrap;
 `;

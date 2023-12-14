@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import hamburgerIcon from "../assets/hamburger.png";
 import {
@@ -9,18 +9,39 @@ import {
   NavItem,
 } from "../styles/navbar";
 import { NavbarButton } from "../styles/buttons";
-import { scrollToSection } from "../utils/helpers";
+import { scrollToSectionById } from "../utils/helpers";
 
 function Navbar() {
-  const filters = ["Home", "About", "Portfolio"];
+  const filters = ["Home", "Features", "Portfolio"];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeFilter, setActiveFilter] = useState("");
   const sectionsContainerRef = useRef<HTMLDivElement>(null);
 
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionElements = document.querySelectorAll("section");
+      const scrollPosition = window.scrollY;
+
+      sectionElements.forEach((section) => {
+        const top = section.offsetTop - 110;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPosition >= top && scrollPosition < bottom) {
+          setActiveSection(section.id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <NavbarContainer>
+      <NavbarContainer id="Navbar">
         <Logo>TG</Logo>
         <MobileMenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <img src={hamburgerIcon} alt={"Menu"} />
@@ -29,17 +50,16 @@ function Navbar() {
           {filters.map((filter) => (
             <NavItem
               key={filter}
-              active={filter === activeFilter ? true : false}
+              className={activeSection === filter ? "active" : ""}
               onClick={() => {
-                scrollToSection(filter);
-                setActiveFilter(filter);
+                scrollToSectionById(filter);
               }}
             >
               {filter}
             </NavItem>
           ))}
         </NavItemsFrame>
-        <NavbarButton onClick={() => scrollToSection("Contact")}>
+        <NavbarButton onClick={() => scrollToSectionById("Contact")}>
           Contact
         </NavbarButton>
       </NavbarContainer>

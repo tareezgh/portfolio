@@ -14,8 +14,9 @@ export const handleDownload = () => {
   document.body.removeChild(link);
 };
 
-export const scrollToSection = (sectionClassName: string) => {
-  const section = document.querySelector(`.${sectionClassName}`);
+export const scrollToSectionById = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+
   if (section) {
     section.scrollIntoView({
       behavior: "smooth",

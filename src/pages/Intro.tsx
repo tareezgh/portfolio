@@ -1,4 +1,10 @@
 import { PrimaryButton, SecondaryButton } from "../styles/buttons";
+import IntroLogo from "../assets/hero-image.png";
+import TextAnimation from "../components/TextAnimation";
+import Socials from "../components/Socials";
+
+import { handleDownload, scrollToSectionById } from "../utils/helpers";
+import { texts } from "../data/constant";
 import {
   IntroContainer,
   IntroContent,
@@ -10,21 +16,10 @@ import {
   ButtonContainer,
   WelcomeTitle,
 } from "../styles/home";
-import IntroLogo from "../assets/hero-image.png";
-import TextAnimation from "../components/TextAnimation";
-
-import { handleDownload, scrollToSection } from "../utils/helpers";
-import Socials from "../components/Socials";
 
 const Intro = () => {
-  const texts: string[] = [
-    "Software Engineer.",
-    "Full Stack Developer.",
-    "Freelancer.",
-  ];
-
   return (
-    <IntroContainer className="Home">
+    <IntroContainer id="Home">
       <IntroContent>
         <WelcomeTitle>WELCOME TO MY WORLD</WelcomeTitle>
         <TextWrapper>
@@ -41,7 +36,7 @@ const Intro = () => {
         </TextWrapper>
         <ButtonContainer>
           <PrimaryButton onClick={handleDownload}>Download CV</PrimaryButton>
-          <SecondaryButton onClick={() => scrollToSection("Contact")}>
+          <SecondaryButton onClick={() => scrollToSectionById("Contact")}>
             Contact Me
           </SecondaryButton>
         </ButtonContainer>

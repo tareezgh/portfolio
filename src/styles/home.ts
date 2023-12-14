@@ -1,23 +1,21 @@
 import styled from "styled-components";
-import { PrimaryColor } from "./style";
+import { FlexCol, FlexRow, MidBlackColor, PrimaryColor } from "./style";
 
-export const IntroContainer = styled.div`
+export const IntroContainer = styled.section`
   width: 100vw;
   height: 60vh;
   max-width: 85%;
-  margin: 0 auto;
+  margin: 50px auto;
   position: relative;
   align-items: flex-start;
   gap: 50px;
-  margin-top: 50px;
   @media (max-width: 768px) {
     height: auto;
   }
 `;
 
 export const IntroContent = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${FlexCol}
   align-items: flex-start;
   gap: 24px;
 
@@ -41,13 +39,6 @@ export const IntroImage = styled.div`
 
   @media (max-width: 768px) {
     display: none;
-    // opacity: 0.1;
-    // top: -3rem;
-    // right: -5rem;
-    // img {
-    //   width: 100vw;
-    //   height: 75vh;
-    // }
   }
 `;
 
@@ -65,16 +56,14 @@ export const WelcomeTitle = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${FlexCol}
   align-items: flex-start;
   gap: 10px;
 `;
 
 export const IntroTitle = styled.div`
-  display: flex;
-  flex-direction: row;
-  color: #232020;
+  ${FlexRow}
+  color: ${MidBlackColor};
   font-family: Inter;
   font-size: 3rem;
   font-style: normal;
@@ -83,7 +72,7 @@ export const IntroTitle = styled.div`
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
-    flex-direction: column;
+    ${FlexCol}
   }
 `;
 
@@ -97,7 +86,7 @@ export const IntroName = styled.span`
 
 export const IntroPara = styled.div`
   width: 500px;
-  color: #474658;
+  color: ${MidBlackColor};
   font-family: Inter;
   font-size: 1.5rem;
   font-style: normal;
@@ -111,16 +100,16 @@ export const IntroPara = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  display: flex;
+  ${FlexRow}
   align-items: center;
   gap: 10px;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    ${FlexCol}
   }
 `;
 
 export const SocialContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+  ${FlexRow}
+  gap:20px;
 `;

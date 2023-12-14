@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { PrimaryColor } from "./style";
+import {
+  GreyColor,
+  PrimaryButtonColor,
+  PrimaryColor,
+  SecondaryButtonColor,
+  WhiteColor,
+} from "./style";
 
 const Button = styled.div`
   display: flex;
@@ -17,28 +23,22 @@ const Button = styled.div`
 `;
 
 export const PrimaryButton = styled(Button)`
-  background: #eee;
-  color: #5b5b5b;
+  background: ${GreyColor};
+  color: ${PrimaryButtonColor};
   &:hover {
     color: ${PrimaryColor};
   }
 `;
 
 export const SecondaryButton = styled(Button)`
-  background: #474658;
-  color: #fff;
+  background: ${SecondaryButtonColor};
+  color: ${WhiteColor};
   &:hover {
     color: ${PrimaryColor};
   }
 `;
 
 export const NavbarButton = styled(SecondaryButton)`
-  background: #474658;
-  color: #fff;
-  &:hover {
-    color: ${PrimaryColor};
-  }
-
   @media (max-width: 768px) {
     display: none;
   }

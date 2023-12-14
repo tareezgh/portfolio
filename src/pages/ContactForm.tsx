@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <SectionContainer className="Contact">
+    <SectionContainer id="Contact">
       <SectionTitle>Let's Collaborate</SectionTitle>
       <SectionDescription>
         Are you interested in leveraging my expertise for your project? I am

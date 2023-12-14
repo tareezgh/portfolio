@@ -9,15 +9,11 @@ import {
 
 const Portfolio = () => {
   return (
-    <SectionContainer className="Portfolio">
-      <SectionTitle>Portfolio</SectionTitle>
-      <SectionDescription>
-        Discover my portfolio—where innovation meets functionality. Dive into
-        projects showcasing my full-stack expertise, seamlessly blending
-        technology and design for immersive web and mobile experiences.
-      </SectionDescription>
+    <SectionContainer id="Portfolio">
+      <SectionTitle>{PROJECTS.title}</SectionTitle>
+      <SectionDescription>{PROJECTS.description}</SectionDescription>
       <ProjectList>
-        {PROJECTS.map((project) => (
+        {PROJECTS.projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </ProjectList>

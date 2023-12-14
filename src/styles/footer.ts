@@ -1,27 +1,26 @@
 import styled from "styled-components";
-import { PrimaryColor } from "./style";
+import { FlexCol, FlexRow, MidBlackColor, PrimaryColor } from "./style";
 import { Logo } from "./navbar";
 
 export const FooterContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+  ${FlexRow}
   width: 100vw;
 
   padding: 1rem 7.5%;
-  margin-top: 2rem;
+
   background-color: ${PrimaryColor};
   align-items: center;
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    ${FlexCol}
     gap: 1rem;
   }
 `;
 
-export const WhiteLogo = styled(Logo)`
-  color: white;
-  border-bottom: 4px solid white;
+export const BlackLogo = styled(Logo)`
+  color: ${MidBlackColor};
+  border-bottom: 4px solid ${MidBlackColor};
 `;
 
 export const FooterText = styled.div`

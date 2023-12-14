@@ -1,15 +1,14 @@
 import styled from "styled-components";
-import { PrimaryColor } from "./style";
+import { FlexCol, FlexRow, PrimaryColor } from "./style";
 
 export const InnerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${FlexCol}
   gap: 20px;
   width: 100%;
   max-width: 800px;
 
   @media (min-width: 768px) {
-    flex-direction: row;
+    ${FlexRow}
   }
 `;
 
@@ -34,8 +33,7 @@ export const InfoCard = styled.div`
 `;
 
 export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
+  ${FlexCol}
   width: 100%;
   max-width: 400px;
   margin: 10px auto;
@@ -79,7 +77,7 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
   ${inputStyles}
-  padding: 0.5rem 1rem; 
+  padding: 0.5rem 1rem;
   resize: vertical;
 `;
 

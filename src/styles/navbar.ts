@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { PrimaryColor } from "./style";
+import styled from "styled-components";
+import { MidBlackColor, PrimaryColor, WhiteColor } from "./style";
 
 export const NavbarContainer = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const NavbarContainer = styled.div`
   padding: 0 7.5%;
   box-sizing: border-box;
 
-  background-color: #fff;
+  background-color: ${WhiteColor};
   align-items: center;
   justify-content: space-between;
   position: sticky;
@@ -58,18 +58,16 @@ export const NavItemsFrame = styled.div<{
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: ${WhiteColor};
     padding: 10px;
   }
 `;
 
-export const NavItem = styled.div<{
-  active: boolean;
-}>`
+export const NavItem = styled.div`
   display: flex;
   align-items: center;
   margin: 1rem;
-  color: #232020;
+  color: ${MidBlackColor};
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
@@ -82,13 +80,11 @@ export const NavItem = styled.div<{
     cursor: pointer;
   }
 
-  ${({ active }) =>
-    active &&
-    css`
-      color: ${PrimaryColor};
-      font-weight: 700;
-      border-bottom: 1px solid ${PrimaryColor};
-    `}
+  &.active {
+    color: ${PrimaryColor};
+    font-weight: 700;
+    border-bottom: 1px solid ${PrimaryColor};
+  }
 
   @media (max-width: 768px) {
     font-size: 18px;

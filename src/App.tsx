@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Navbar from "./components/Navbar";
 import Intro from "./pages/Intro";
-import TechSkills from "./pages/TechSkills";
+import Features from "./pages/Features";
 import Portfolio from "./pages/Portfolio";
 import ContactForm from "./pages/ContactForm";
 import Footer from "./components/Footer";
@@ -32,7 +32,7 @@ function App() {
       <ToastContainer />
       <Navbar />
       <Intro />
-      <TechSkills />
+      <Features />
       <Portfolio />
       <ContactForm />
       <Footer />
