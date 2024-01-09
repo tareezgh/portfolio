@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-Sitemap: https://tareez-ghandour.web.app/sitemap.xml
+Sitemap: https://www.tareezghandour.com/sitemap.xml

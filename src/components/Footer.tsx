@@ -7,7 +7,7 @@ function Footer() {
       <FooterContainer>
         <BlackLogo>TG</BlackLogo>
 
-        <FooterText>© 2023 Tareez Ghandour</FooterText>
+        <FooterText>© 2024 Tareez Ghandour</FooterText>
         <Socials />
       </FooterContainer>
     </>
