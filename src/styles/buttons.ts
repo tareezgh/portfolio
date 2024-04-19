@@ -15,7 +15,7 @@ const Button = styled.div`
   gap: 10px;
   border-radius: 20px;
   font-weight: 600;
-
+  width: 100%;
   &:hover {
     font-weight: 700;
     cursor: pointer;

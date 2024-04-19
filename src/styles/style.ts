@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const PrimaryColor = "#f7c343";
 export const MidBlackColor = "#232020";
@@ -20,16 +20,16 @@ export const FlexRow = `
   flex-direction: row;
 `;
 
-const fadeInAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+// const fadeInAnimation = keyframes`
+//   from {
+//     opacity: 0;
+//     transform: translateY(30px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// `;
 
 export const SectionContainer = styled.section`
   display: flex;

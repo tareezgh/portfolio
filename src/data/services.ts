@@ -1,6 +1,6 @@
-import codeIcon from "../assets/code.png";
-import customIcon from "../assets/edit.png";
-import responsiveIcon from "../assets/responsive.png";
+import codeIcon from "../assets/code.webp";
+import customIcon from "../assets/edit.webp";
+import responsiveIcon from "../assets/responsive.webp";
 
 
 export const SERVICES = {

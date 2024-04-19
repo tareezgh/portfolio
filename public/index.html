@@ -6,22 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
-    name="description"
-    content="Explore Tareez Ghandour's portfolio showcasing a range of web development projects and expertise in React, JavaScript, and more."
+      name="description"
+      content="Explore Tareez Ghandour's portfolio showcasing a range of web development projects and expertise in React, JavaScript, and more."
     />
 
-    
-    <meta name="keywords" content="Tareez Ghandour, tareez ghandour, tareez, ghandour, Tareez, Ghandour, Web Developer, Freelancer, Portfolio, Projects, תרז גנדור, تريز غندور " />
+    <meta
+      name="keywords"
+      content="Tareez Ghandour, tareez ghandour, tareez, ghandour, Tareez, Ghandour, Web Developer, Freelancer, Portfolio, Projects, תרז גנדור, تريز غندور "
+    />
 
     <meta name="author" content="Tareez Ghandour" />
     <meta name="robots" content="index, follow" />
-  
 
-    <meta property="og:title" content="Tareez Ghandour - Web Developer Portfolio" />
-    <meta property="og:description" content="Explore Tareez Ghandour's portfolio showcasing web development projects, React expertise, and JavaScript skills." />
+    <meta
+      property="og:title"
+      content="Tareez Ghandour - Web Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore Tareez Ghandour's portfolio showcasing web development projects, React expertise, and JavaScript skills."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.tareezghandour.com" />
-    <meta property="og:image" content="%PUBLIC_URL%/logo.png" /> 
+    <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
     <!--
@@ -40,7 +47,8 @@
     -->
 
     <title>Tareez Ghandour - Web Developer Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="canonical" href="https://www.tareezghandour.com/" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -51,7 +59,7 @@
         "url": "https://www.tareezghandour.com/"
       }
     </script>
-      
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -66,25 +74,56 @@
       }
     </script>
 
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/651a305fb12d2b21dd1462e3c/9ea5a3e1173a646739c323401.js");</script>
-        
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">     
+    <script id="mcjs">
+      !(function (c, h, i, m, p) {
+        (m = c.createElement(h)),
+          (p = c.getElementsByTagName(h)[0]),
+          (m.async = 1),
+          (m.src = i),
+          p.parentNode.insertBefore(m, p);
+      })(
+        document,
+        "script",
+        "https://chimpstatic.com/mcjs-connected/js/users/651a305fb12d2b21dd1462e3c/9ea5a3e1173a646739c323401.js"
+      );
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5R4WSRJ1FC"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-5R4WSRJ1FC');
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5R4WSRJ1FC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5R4WSRJ1FC");
     </script>
     <script type="text/javascript">
-      (function(){
+      (function () {
         emailjs.init("KnvuHmCPhQg0PD8G7");
-    })();
-</script>
+      })();
+    </script>
+
+    <script>
+      const selectedLanguage = localStorage.getItem("selectedLanguage") || "en";
+
+      // Set direction based on language
+      if (selectedLanguage === "ar" || selectedLanguage === "he") {
+        document.documentElement.setAttribute("dir", "rtl");
+        document.documentElement.setAttribute("lang", selectedLanguage);
+      } else {
+        document.documentElement.setAttribute("dir", "ltr");
+        document.documentElement.setAttribute("lang", "en");
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

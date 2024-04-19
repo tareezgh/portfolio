@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   Image,
   ImageGroup,
@@ -21,6 +22,13 @@ import { SERVICES } from "../data/services";
 import { skills, skillsUrl } from "../data/constant";
 
 const Features: React.FC = () => {
+  const { t } = useTranslation();
+  SERVICES.title = `${t("services.title")}`;
+  SERVICES.description = `${t("services.description")}`;
+  SERVICES.services.forEach((service,index) => {
+    service.title = t(`services.service${index}.title`);
+    service.description = t(`services.service${index}.description`);
+  });
   const renderSkills = () => {
     return (
       <SkillsListGroup>
@@ -34,7 +42,7 @@ const Features: React.FC = () => {
   };
 
   return (
-    <SectionContainer id="Features">
+    <SectionContainer id={`${t("services.id")}`}>
       <SectionTitle>{SERVICES.title}</SectionTitle>
       <SectionDescription>{SERVICES.description}</SectionDescription>
       <ServicesContainer>

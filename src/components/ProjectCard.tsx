@@ -8,8 +8,8 @@ import {
   Title,
 } from "../styles/portfolio";
 import SocialIcon from "./SocialIcon";
-import codeIcon from "../assets/code.png";
-import linkIcon from "../assets/link.png";
+import codeIcon from "../assets/code.webp";
+import linkIcon from "../assets/link.webp";
 interface ProjectCardProps {
   project: Project;
 }

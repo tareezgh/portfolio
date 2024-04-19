@@ -1,7 +1,7 @@
-import Epicure from "../assets/Epicure.png";
-import iTravel from "../assets/iTravel.png";
-import PokeDex from "../assets/Pokedex.png";
-import MarketMinds from "../assets/MarketMinds.png";
+import Epicure from "../assets/Epicure.webp";
+import iTravel from "../assets/iTravel.webp";
+import PokeDex from "../assets/Pokedex.webp";
+import MarketMinds from "../assets/MarketMinds.webp";
 
 export interface Project {
   id: number;

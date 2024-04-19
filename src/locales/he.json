@@ -1,0 +1,68 @@
+{
+  "english": "אנגלית",
+  "arabic": "ערבית",
+  "hebrew": "עברית",
+
+  "navbar": {
+    "home": "בית",
+    "services": "שירותים",
+    "portfolio": "פרויקטים",
+    "contact": "צור קשר"
+  },
+  "intro": {
+    "id": "בית",
+    "title": "ברוכים הבאים לעולם שלי",
+
+    "subTitle": " היי, אני",
+    "name": "תרז ג'נדור",
+    "SW": "מהנדס תוכנה.",
+    "FS": "מפתח Full Stack.",
+    "freelancer": "פרילנסר.",
+
+    "description": "מתמחה בפיתוח Full Stack. התשוקה שלי נמצאת ביצירת חוויות דיגיטליות מרתקות דרך אפליקציות אינטרנט מתקדמות.",
+
+    "button1": "השכירו אותי",
+    "button2": "צור קשר"
+  },
+  "services": {
+    "id": "שירותים",
+    "title": "מה אני מציע",
+
+    "description": "כמפתח Full Stack המתמחה בעיצוב אתרי אינטרנט, ניידים ואפליקציות, אני מביאה סט כישורים כולל ",
+
+    "service0": {
+      "title": "פיתוח אתרים מותאמים אישית",
+      "description": "מביאה את הרעיונות שלך לחיים, אני יוצרת אתרי אינטרנט מהיסוד, ומבטיחה שהם מותאמים באופן מלא למותג ולראיון שלך. כל אתר נוצר בקפידה, ומבטיחה שהוא משקף את הייחוד שלך ועונה על דרישותיך הספציפיות."
+    },
+    "service1": {
+      "title": "עיצוב אינטרנט רספונסיבי",
+      "description": "מתמקדת ביצירת אתרי אינטרנט שלא רק נראים מרהיבים אלא גם נכנסים בקלות לגדלי מסך שונים. האתר שלך ישמור על הקסם והפונקציונליות שלו בין אם יש גישה אליו ממחשב, טאבלט או טלפון נייד, מבטיח שלקהל היעד שלך תהיה חוויה עקביתה ונעימה."
+    },
+    "service2": {
+      "title": "שירותי שליטה ברשת",
+      "description": "התמחותי מתבססת על שימוש במגוון של HTML, CSS, TypeScript, ו-React לבניית אתרי אינטרנט שמשך ומעורר את תשומת ליבם של המבקרים. אני מנצלת את הטכנולוגיות ואת עקרונות העיצוב האחרונים כדי לוודא שהאתר שלך יתבל ביפה וביעילות."
+    }
+  },
+  "portfolio": {
+    "id": "פרויקטים",
+    "title": "Portfolio",
+
+    "description": "גלה את התיק האישי שלי - היכן החדשנות נפגשת עם הפונקציונליות. צפה בפרוייקטים המציגים את המומחיות שלי בעיצוב Full Stack, משלבים באופן שוחף בטכנולוגיה ועיצוב לחוויות רבות במדיה רספונסיבית."
+  },
+  "contact": {
+    "id": "צור קשר",
+    "title": "בואו נשתף פעולה",
+    "description": "האם אתה מעוניין להשתמש במומחיות שלי למשימה שלך? אני נרגש לחקור הזדמנויות מהפכניות ולתרום להצלחת הצוות שלך.",
+
+    "name": "שמך",
+
+    "email": "האימייל שלך",
+    "message": "ההודעה שלך",
+
+    "button": "שלח"
+  },
+
+  "emailSend": "תודה! 🤙🏻",
+  "emailEmpty": "אנא מלא את כל השדות",
+  "emailFail": "משהו השתבש, אנא נסה שוב 😊"
+}

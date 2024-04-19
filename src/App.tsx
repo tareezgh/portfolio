@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import "./i18n";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCc33LFMXSxFaUdZiL_BjGjYc6Qd5jImPY",

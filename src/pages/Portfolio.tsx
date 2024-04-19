@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import ProjectCard from "../components/ProjectCard";
 import { PROJECTS } from "../data/projects";
 import { ProjectList } from "../styles/portfolio";
@@ -8,8 +9,12 @@ import {
 } from "../styles/style";
 
 const Portfolio = () => {
+ const { t } = useTranslation();
+ PROJECTS.title = `${t("portfolio.title")}`;
+ PROJECTS.description = `${t("portfolio.description")}`;
+ 
   return (
-    <SectionContainer id="Portfolio">
+    <SectionContainer  id={`${t("portfolio.id")}`}>
       <SectionTitle>{PROJECTS.title}</SectionTitle>
       <SectionDescription>{PROJECTS.description}</SectionDescription>
       <ProjectList>

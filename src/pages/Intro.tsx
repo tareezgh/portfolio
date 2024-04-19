@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { PrimaryButton, SecondaryButton } from "../styles/buttons";
-import IntroLogo from "../assets/hero-image.png";
+import IntroLogo from "../assets/hero-image2.webp";
 import TextAnimation from "../components/TextAnimation";
 import Socials from "../components/Socials";
 
-import { handleDownload, scrollToSectionById } from "../utils/helpers";
-import { texts } from "../data/constant";
+import { scrollToSectionById } from "../utils/helpers";
+
 import {
   IntroContainer,
   IntroContent,
@@ -18,31 +19,44 @@ import {
 } from "../styles/home";
 
 const Intro = () => {
+  const { t } = useTranslation();
+  const texts: string[] = [
+   `${t("intro.SW")}`,
+   `${t("intro.FS")}`,
+   `${t("intro.freelancer")}`,
+  ];
+  const handleHireMeClick = () => {
+    const url = "https://www.upwork.com/freelancers/~01cb2cb30ea7f12d24";
+    window.open(url, "_blank");
+  };
+
+  const isDocumentRTL = (): boolean => {
+    return document.documentElement.getAttribute("dir") === "rtl";
+  };
+  const isRTL = isDocumentRTL();
   return (
-    <IntroContainer id="Home">
+    <IntroContainer id={`${t("intro.id")}`}>
       <IntroContent>
-        <WelcomeTitle>WELCOME TO MY WORLD</WelcomeTitle>
+        <WelcomeTitle>{t("intro.title")}</WelcomeTitle>
         <TextWrapper>
           <IntroTitle>
-            Hi, I’m <IntroName> Tareez Ghandour a </IntroName>
+            {t("intro.subTitle")} <span style={{ marginRight: '10px' }}/><IntroName> {t("intro.name")} </IntroName>
           </IntroTitle>
           <TextAnimation texts={texts} />
 
-          <IntroPara>
-            A proactive B.Sc. Software Engineering student specializing in
-            full-stack development. My passion lies in crafting immersive
-            digital experiences through innovative web applications.
-          </IntroPara>
+          <IntroPara>{t("intro.description")}</IntroPara>
         </TextWrapper>
         <ButtonContainer>
-          <PrimaryButton onClick={handleDownload}>Download CV</PrimaryButton>
-          <SecondaryButton onClick={() => scrollToSectionById("Contact")}>
-            Contact Me
+          <SecondaryButton onClick={handleHireMeClick}>
+            {t("intro.button1")}
           </SecondaryButton>
+          <PrimaryButton onClick={() => scrollToSectionById(`${t("contact.id")}`)}>
+            {t("intro.button2")}
+          </PrimaryButton>
         </ButtonContainer>
         <Socials />
       </IntroContent>
-      <IntroImage>
+      <IntroImage isRTL={isRTL}>
         <img src={IntroLogo} alt="HeroImage" />
       </IntroImage>
     </IntroContainer>

@@ -1,8 +1,3 @@
-export const texts: string[] = [
-  "Software Engineer.",
-  "Full Stack Developer.",
-  "Freelancer.",
-];
 
 export const skillsUrl = "https://skillicons.dev/icons?i=";
 

@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Form,
   Input,
@@ -23,6 +24,7 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
+  const { t } = useTranslation();
   const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -51,7 +53,7 @@ const ContactForm: React.FC = () => {
     };
 
     if (!name || !email || !message) {
-      toast.error("Please fill in all fields", {
+      toast.error(`${t("emailEmpty")}`, {
         position: "top-center",
         hideProgressBar: true,
       });
@@ -64,13 +66,13 @@ const ContactForm: React.FC = () => {
           "KnvuHmCPhQg0PD8G7"
         )
         .then(() => {
-          toast.success("Email sent successfully", {
+          toast.success(`${t("emailSend")}`, {
             position: "top-center",
             hideProgressBar: true,
           });
         })
         .catch((error: any) => {
-          toast.error("Error sending email, try again", {
+          toast.error(`${t("emailFail")}`, {
             position: "top-center",
             hideProgressBar: true,
           });
@@ -79,37 +81,33 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <SectionContainer id="Contact">
-      <SectionTitle>Let's Collaborate</SectionTitle>
-      <SectionDescription>
-        Are you interested in leveraging my expertise for your project? I am
-        eager to explore innovative opportunities and contribute to the success
-        of your team.
-      </SectionDescription>
+    <SectionContainer id={`${t("contact.id")}`}>
+      <SectionTitle>{t("contact.title")}</SectionTitle>
+      <SectionDescription>{t("contact.description")}</SectionDescription>
       <InnerContainer>
         <Form ref={form} onSubmit={handleContactSubmit}>
           <Input
             type="text"
             name="name"
-            placeholder="Your Name"
+            placeholder={`${t("contact.name")}`}
             value={formData.name}
             onChange={handleInputChange}
           />
           <Input
             type="email"
             name="email"
-            placeholder="Your Email"
+            placeholder={`${t("contact.email")}`}
             value={formData.email}
             onChange={handleInputChange}
           />
           <TextArea
             name="message"
-            placeholder="Your Message"
+            placeholder={`${t("contact.message")}`}
             value={formData.message}
             onChange={handleInputChange}
             rows={4}
           />
-          <SubmitButton type="submit">Send</SubmitButton>
+          <SubmitButton type="submit">{t("contact.button")}</SubmitButton>
         </Form>
       </InnerContainer>
     </SectionContainer>

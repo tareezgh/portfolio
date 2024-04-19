@@ -24,17 +24,21 @@ export const IntroContent = styled.div`
   }
 `;
 
-export const IntroImage = styled.div`
+export const IntroImage = styled.div<{
+  isRTL: boolean;
+}>`
   border-radius: 1rem;
   position: absolute;
-  top: 0;
-  right: 0;
+  
+  top: 10%;
+  right: ${({ isRTL }) => (isRTL ? "auto" : "0")};
+  left: ${({ isRTL }) => (isRTL ? "0" : "auto")};
   z-index: -1;
   object-fit: contain;
   overflow: hidden;
   img {
-    width: 550px;
-    height: 70vh;
+    width: 600px;
+    height: 50vh;
   }
 
   @media (max-width: 768px) {
@@ -103,9 +107,10 @@ export const ButtonContainer = styled.div`
   ${FlexRow}
   align-items: center;
   gap: 10px;
-
+  width: 30%;
   @media (max-width: 768px) {
     ${FlexCol}
+    width: 60%;
   }
 `;
 
