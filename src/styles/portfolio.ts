@@ -8,7 +8,7 @@ export const ProjectList = styled.div`
   justify-content: center;
 `;
 
-export const CardContainer = styled.a`
+export const CardContainer = styled.div`
   border: 1px solid ${LightGreyColor};
   border-radius: 10px;
   overflow: hidden;

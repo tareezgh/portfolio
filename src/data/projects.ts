@@ -2,6 +2,8 @@ import Epicure from "../assets/Epicure.webp";
 import iTravel from "../assets/iTravel.webp";
 import PokeDex from "../assets/Pokedex.webp";
 import MarketMinds from "../assets/MarketMinds.webp";
+import FunCamp from "../assets/4FunCamp.webp";
+import ThePeopleVsGod from "../assets/thepeoplevsgod.webp";
 
 export interface Project {
   id: number;
@@ -33,13 +35,27 @@ export const PROJECTS = {
     },
     {
       id: 3,
+      title: "4Fun Camp",
+      imageUrl: FunCamp,
+      webUrl: "https://www.michaelcamp.co.il/",
+      codeUrl: "",
+    },   
+    {
+      id: 4,
+      title: "THE PEOPLE VS. GOD",
+      imageUrl: ThePeopleVsGod,
+      webUrl: "https://thepeoplevsgod.com/",
+      codeUrl: "",
+    },
+    {
+      id: 5,
       title: "iTravel",
       imageUrl: iTravel,
       webUrl: "https://itravel-1.web.app/",
       codeUrl: "",
     },
     {
-      id: 4,
+      id: 6,
       title: "MarketMinds",
       imageUrl: MarketMinds,
       webUrl: "https://market-minds.web.app/",

@@ -25,7 +25,7 @@ const Features: React.FC = () => {
   const { t } = useTranslation();
   SERVICES.title = `${t("services.title")}`;
   SERVICES.description = `${t("services.description")}`;
-  SERVICES.services.forEach((service,index) => {
+  SERVICES.services.forEach((service, index) => {
     service.title = t(`services.service${index}.title`);
     service.description = t(`services.service${index}.description`);
   });
@@ -34,7 +34,7 @@ const Features: React.FC = () => {
       <SkillsListGroup>
         {skills.map((skill, index) => (
           <ImageGroup key={index}>
-            <Image src={skillsUrl + skill} />
+            <Image src={skillsUrl + skill} alt={`${skill}`} />
           </ImageGroup>
         ))}
       </SkillsListGroup>
@@ -48,7 +48,7 @@ const Features: React.FC = () => {
       <ServicesContainer>
         {SERVICES.services.map((service, index: number) => (
           <ServiceWrapper key={index}>
-            <ServiceIcon src={service.iconUrl} className="icon" />
+            <ServiceIcon src={service.iconUrl} className="icon" alt="Icon" />
             <ServiceFrame className="frame">
               <ServiceTitle className="title">{service.title}</ServiceTitle>
               <ServiceDescription className="description">
